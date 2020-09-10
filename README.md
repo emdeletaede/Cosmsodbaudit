@@ -29,7 +29,7 @@ Following is an example CLI command to create a diagnostic setting using all thr
 
 Azure CLI
 
-
+```Shell
 az monitor diagnostic-settings create  \
 --name Cosmosdb-Diagnostics \
 --resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.DocumentDB/databaseAccounts/ZZZZ \
