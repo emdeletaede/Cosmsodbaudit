@@ -30,15 +30,8 @@ Following is an example CLI command to create a diagnostic setting using all thr
 Azure CLI
 
 ```Shell
-az monitor diagnostic-settings create  \
---name Cosmosdb-Diagnostics \
---resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.DocumentDB/databaseAccounts/ZZZZ \
---logs    '[{"category": "DataPlaneRequests","enabled": true},{"category": "ControlPlaneRequests","enabled": true},{"category": "QueryRuntimeStatistics","enabled": true},{"category": "MongoRequests","enabled": false},{"category": "PartitionKeyStatistics","enabled": true},{"category": "PartitionKeyRUConsumption","enabled": true},{"category": "CassandraRequests","enabled": false},{"category": "GremlinRequests","enabled": false}]' \
---metrics '[{"category": "Requests","enabled": true}]' \
---workspace /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myresourcegroup/providers/microsoft.operationalinsights/workspaces/MYlog 
---storage-account /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount \
---event-hub-rule /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhub/authorizationrules/RootManageSharedAccessKey
-...
+$az monitor diagnostic-settings create --name Cosmosdb-Diagnostics --resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.DocumentDB/databaseAccounts/ZZZZ --logs    '[{"category": "DataPlaneRequests","enabled": true},{"category": "ControlPlaneRequests","enabled": true},{"category": "QueryRuntimeStatistics","enabled": true},{"category": "MongoRequests","enabled": false},{"category": "PartitionKeyStatistics","enabled": true},{"category": "PartitionKeyRUConsumption","enabled": true},{"category": "CassandraRequests","enabled": false},{"category": "GremlinRequests","enabled": false}]' \--metrics '[{"category": "Requests","enabled": true}]' --workspace /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myresourcegroup/providers/microsoft.operationalinsights/workspaces/MYlog --storage-account /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount --event-hub-rule /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhub/authorizationrules/RootManageSharedAccessKey \
+```
 
 You can enable or not each category by changing false to true 
 {"category": "DataPlaneRequests","enabled": true}
